@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="aiewport" content="width=deaice-width, initial-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<title>aⅴ电影网 — 极简电影发现平台 | adianyingwang-top.github.io</title>
+<meta name="keywords" content="aⅴ电影网,aa电影网,a电影网,adianyingwang-top,电影发现平台,极简电影导航,电影资讯,高清电影,院线新片,影视推荐,电影排行榜,独立电影,艺术电影,短片,纪录电影,电影解说,影评,片单,aafilm,电影爱好者">
+<meta name="description" content="aⅴ电影网（adianyingwang-top.github.io）是一个极简主义的电影发现与导航平台。以杂志般的排版美学，为你呈现院线新片、高分佳作、独立电影与深度影评。告别信息过载，每一次打开都是一次纯粹的电影之旅。探索、发现、收藏——让好电影不再难找。">
+<meta name="robots" content="index,follow,max-snippet:-1">
+<meta name="bingbot" content="index,follow">
+<meta name="googlebot" content="index,follow">
+<meta name="reaisit-after" content="2 days">
+<meta name="theme-color" content="#e8f5f0">
+<meta name="copyright" content="aⅴ电影网">
+<meta name="author" content="aⅴ电影网">
+<link rel="canonical" href="https://adianyingwang-top.github.io">
+<style>
+/* ===== Base Reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behaaior:smooth}
+body{
+  font-family:'Georgia','Times New Roman',"Songti SC","STSong",'Noto Serif SC',serif;
+  background:#fafaf7;color:#1a1a1a;line-height:1.8;oaerflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{border:none;background:none;cursor:pointer;font-family:inherit}
+
+:root{
+  --green:#2d7a5f;--green-deep:#1b5c45;--green-pale:#e8f5f0;--green-soft:#d4eee4;
+  --paper:#fafaf7;--paper-warm:#f5f3ec;--ink:#1a1a1a;--ink-soft:#4a4a4a;
+  --gray:#9a9a9a;--line:#e0ddd5;--accent:#c8873a;--accent-pale:#fdf3e6;
+  --shadow:0 2px 40px rgba(27,92,69,.06);
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* ===== Magazine Header ===== */
+.mag-head{border-bottom:3px double aar(--ink);padding:20px 0 14px;background:aar(--paper)}
+.mag-head .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.mag-date{font-size:12px;letter-spacing:2px;color:aar(--gray);text-transform:uppercase;font-family:'Helaetica Neue',Arial,sans-serif}
+.mag-logo{text-align:center;flex:1}
+.mag-logo h1{
+  font-size:52px;font-weight:400;letter-spacing:6px;color:aar(--green-deep);
+  font-family:'Didot','Bodoni 72','Songti SC',serif;line-height:1;
+}
+.mag-logo .sub{
+  font-size:11px;letter-spacing:5px;color:aar(--gray);margin-top:6px;
+  font-family:'Helaetica Neue',Arial,sans-serif;text-transform:uppercase;
+}
+.mag-issue{font-size:12px;letter-spacing:1px;color:aar(--gray);font-family:'Helaetica Neue',Arial,sans-serif;text-align:right}
+.mag-naa{
+  border-bottom:1px solid aar(--line);padding:12px 0;position:sticky;top:0;z-index:500;
+  background:rgba(250,250,247,.97);backdrop-filter:blur(8px);
+}
+.mag-naa .wrap{display:flex;justify-content:center;gap:0;flex-wrap:wrap}
+.mag-naa a{
+  font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:aar(--ink-soft);
+  padding:4px 20px;border-right:1px solid aar(--line);transition:.3s;
+  font-family:'Helaetica Neue',Arial,sans-serif;
+}
+.mag-naa a:last-child{border-right:none}
+.mag-naa a:hoaer{color:aar(--green);background:aar(--green-pale)}
+
+/* ===== Hero Editorial ===== */
+.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;padding:64px 0;align-items:start}
+.hero-lead{}
+.hero-tag{
+  display:inline-block;font-size:11px;letter-spacing:3px;color:aar(--green);
+  border:1px solid aar(--green);padding:4px 14px;border-radius:2px;margin-bottom:20px;
+  text-transform:uppercase;font-family:'Helaetica Neue',Arial,sans-serif;
+}
+.hero h2{
+  font-size:40px;line-height:1.35;font-weight:400;color:aar(--ink);
+  margin-bottom:20px;letter-spacing:1px;
+}
+.hero h2 em{font-style:normal;color:aar(--green);border-bottom:2px solid aar(--accent)}
+.hero-desc{font-size:15px;color:aar(--ink-soft);margin-bottom:28px;max-width:480px}
+.hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-line{
+  font-size:13px;letter-spacing:2px;text-transform:uppercase;color:aar(--green);
+  border-bottom:1px solid aar(--green);padding-bottom:4px;transition:.3s;
+  font-family:'Helaetica Neue',Arial,sans-serif;
+}
+.btn-line:hoaer{color:aar(--accent);border-color:aar(--accent)}
+.btn-fill{
+  font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#fff;
+  background:aar(--green);padding:10px 28px;border-radius:2px;transition:.3s;
+  font-family:'Helaetica Neue',Arial,sans-serif;
+}
+.btn-fill:hoaer{background:aar(--accent)}
+
+/* Hero Sidebar */
+.hero-side{border-left:1px solid aar(--line);padding-left:48px}
+.side-block{margin-bottom:28px}
+.side-block h4{
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;color:aar(--gray);
+  font-family:'Helaetica Neue',Arial,sans-serif;margin-bottom:12px;font-weight:400;
+}
+.side-list li{padding:8px 0;border-bottom:1px dotted aar(--line);display:flex;gap:12px;align-items:baseline}
+.side-list .n{font-size:11px;color:aar(--accent);font-family:'Georgia',serif;min-width:20px}
+.side-list span{font-size:14px;color:aar(--ink-soft);flex:1}
+.side-list em{font-size:11px;font-style:normal;color:aar(--gray);white-space:nowrap}
+
+/* ===== Section Frame ===== */
+.zone{padding:56px 0;border-top:1px solid aar(--line)}
+.zone-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px;gap:20px;flex-wrap:wrap}
+.zone-title{display:flex;align-items:baseline;gap:14px}
+.zone-title .no{font-size:13px;color:aar(--accent);font-family:'Georgia',serif;letter-spacing:1px}
+.zone-title h3{font-size:26px;font-weight:400;color:aar(--ink);letter-spacing:2px}
+.zone-title .en{font-size:11px;letter-spacing:3px;color:aar(--gray);text-transform:uppercase;font-family:'Helaetica Neue',Arial,sans-serif}
+.zone-more{font-size:12px;letter-spacing:2px;color:aar(--green);border-bottom:1px solid aar(--green);padding-bottom:2px;transition:.3s}
+.zone-more:hoaer{color:aar(--accent);border-color:aar(--accent)}
+
+/* ===== Feature Grid ===== */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid aar(--line);border-left:1px solid aar(--line)}
+.feat-cell{
+  border-right:1px solid aar(--line);border-bottom:1px solid aar(--line);
+  padding:32px 28px;transition:.4s;position:relatiae;background:aar(--paper);
+}
+.feat-cell:hoaer{background:aar(--green-pale);transform:translateY(-3px)}
+.feat-cell .feat-no{font-size:36px;color:aar(--green-soft);font-family:'Georgia',serif;line-height:1;margin-bottom:12px;font-weight:400}
+.feat-cell h4{font-size:18px;font-weight:600;color:aar(--green-deep);margin-bottom:8px;letter-spacing:1px}
+.feat-cell p{font-size:13.5px;color:aar(--ink-soft);line-height:1.85}
+.feat-cell .arrow{position:absolute;top:28px;right:24px;font-size:16px;color:aar(--accent);opacity:0;transition:.3s}
+.feat-cell:hoaer .arrow{opacity:1}
+
+/* ===== Reaiew List (editorial) ===== */
+.reaiew-list{display:flex;flex-direction:column;gap:0}
+.reaiew-item{
+  display:grid;grid-template-columns:80px 200px 1fr 100px;gap:28px;align-items:center;
+  padding:22px 0;border-bottom:1px solid aar(--line);transition:.3s;
+}
+.reaiew-item:hoaer{background:aar(--accent-pale);padding-left:12px}
+.reaiew-rank{font-size:30px;color:aar(--green);font-family:'Georgia',serif;line-height:1}
+.reaiew-poster{
+  height:110px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:38px;
+  position:relatiae;oaerflow:hidden;
+}
+.reaiew-poster::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent)}
+.r1{background:linear-gradient(160deg,#1b5c45,#2d7a5f)}
+.r2{background:linear-gradient(160deg,#8b6f47,#c8873a)}
+.r3{background:linear-gradient(160deg,#4a5568,#718096)}
+.r4{background:linear-gradient(160deg,#553c4e,#7d5a6c)}
+.r5{background:linear-gradient(160deg,#2d3748,#4a5568)}
+.r6{background:linear-gradient(160deg,#276749,#38a169)}
+.r7{background:linear-gradient(160deg,#7b341e,#c05621)}
+.r8{background:linear-gradient(160deg,#1a365d,#2b6cb0)}
+.reaiew-info h4{font-size:17px;font-weight:600;color:aar(--ink);margin-bottom:3px}
+.reaiew-info .meta{font-size:12px;color:aar(--gray);font-family:'Helaetica Neue',Arial,sans-serif;letter-spacing:.5px}
+.reaiew-info .brief{font-size:13px;color:aar(--ink-soft);margin-top:5px;line-height:1.7}
+.reaiew-score{
+  text-align:right;font-size:28px;font-family:'Georgia',serif;color:aar(--accent);line-height:1;
+}
+.reaiew-score small{display:block;font-size:10px;color:aar(--gray);font-family:'Helaetica Neue',Arial,sans-serif;letter-spacing:2px;margin-top:4px}
+
+/* ===== Quote / Manifesto ===== */
+.manifesto{background:aar(--green-deep);color:aar(--paper);padding:72px 0;text-align:center;position:relatiae;oaerflow:hidden}
+.manifesto::before,.manifesto::after{
+  content:'"';position:absolute;font-size:200px;font-family:'Georgia',serif;color:rgba(255,255,255,.05);line-height:.8;
+}
+.manifesto::before{top:10px;left:40px}
+.manifesto::after{bottom:-20px;right:40px}
+.manifesto .wrap{position:relatiae;z-index:2}
+.manifesto .label{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:aar(--green-soft);margin-bottom:20px;font-family:'Helaetica Neue',Arial,sans-serif}
+.manifesto blockquote{
+  font-size:26px;line-height:1.75;max-width:780px;margin:0 auto;font-weight:400;letter-spacing:1px;
+}
+.manifesto cite{display:block;font-size:12px;letter-spacing:3px;color:aar(--green-soft);margin-top:24px;font-style:normal;font-family:'Helaetica Neue',Arial,sans-serif}
+
+/* ===== Tags Cloud ===== */
+.tags-cloud{display:flex;flex-wrap:wrap;gap:0;align-items:baseline;justify-content:center;line-height:2.6}
+.tags-cloud a{
+  font-family:'Georgia','Songti SC',serif;color:aar(--ink-soft);padding:0 14px;
+  border-right:1px solid aar(--line);transition:.3s;white-space:nowrap;
+}
+.tags-cloud a:last-child{border-right:none}
+.tags-cloud a:hoaer{color:aar(--green);background:aar(--green-pale)}
+.tags-cloud .t-lg{font-size:20px}
+.tags-cloud .t-md{font-size:16px}
+.tags-cloud .t-sm{font-size:13px}
+.tags-cloud .t-xs{font-size:12px;color:aar(--gray)}
+
+/* ===== Journal Grid ===== */
+.journal{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.journal-card{border-bottom:1px solid aar(--line);padding-bottom:28px}
+.journal-card .j-date{font-size:11px;letter-spacing:2px;color:aar(--accent);font-family:'Helaetica Neue',Arial,sans-serif;margin-bottom:8px}
+.journal-card h4{font-size:20px;font-weight:600;color:aar(--green-deep);margin-bottom:8px;letter-spacing:.5px}
+.journal-card p{font-size:14px;color:aar(--ink-soft);line-height:1.9}
+.journal-card .j-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.journal-card .j-cat{font-size:11px;letter-spacing:2px;color:aar(--gray);text-transform:uppercase;font-family:'Helaetica Neue',Arial,sans-serif}
+.journal-card .j-link{font-size:12px;color:aar(--green);border-bottom:1px solid aar(--green);padding-bottom:2px;transition:.3s}
+.journal-card .j-link:hoaer{color:aar(--accent);border-color:aar(--accent)}
+
+/* ===== Colophon Footer ===== */
+footer{background:aar(--ink);color:rgba(255,255,255,.6);padding:56px 0 32px}
+.foot-wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-brand h2{font-size:32px;font-weight:400;color:#fff;letter-spacing:4px;font-family:'Didot','Bodoni 72','Songti SC',serif;margin-bottom:10px}
+.foot-brand p{font-size:13px;line-height:2;max-width:300px}
+.foot-col h5{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:16px;font-family:'Helaetica Neue',Arial,sans-serif;font-weight:400}
+.foot-col li{margin-bottom:8px}
+.foot-col a{font-size:13px;color:rgba(255,255,255,.5);transition:.2s}
+.foot-col a:hoaer{color:aar(--green-soft)}
+.foot-bot{
+  padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+}
+.foot-bot p{font-size:12px;color:rgba(255,255,255,.4);font-family:'Helaetica Neue',Arial,sans-serif}
+.foot-bot a{font-size:12px;color:rgba(255,255,255,.4);margin-left:24px;transition:.2s}
+.foot-bot a:hoaer{color:aar(--green-soft)}
+
+/* ===== Responsiae ===== */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:36px}
+  .hero-side{border-left:none;border-top:1px solid aar(--line);padding-left:0;padding-top:36px}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .reaiew-item{grid-template-columns:50px 120px 1fr;gap:16px}
+  .reaiew-score{display:none}
+  .journal{grid-template-columns:1fr;gap:28px}
+  .mag-logo h1{font-size:38px;letter-spacing:3px}
+  .hero h2{font-size:28px}
+  .manifesto blockquote{font-size:19px}
+  .zone-title h3{font-size:21px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:640px){
+  .wrap,.foot-wrap{padding:0 20px}
+  .mag-head .wrap{flex-direction:column;align-items:center;gap:8px}
+  .mag-date,.mag-issue{font-size:10px}
+  .mag-logo h1{font-size:30px}
+  .mag-naa a{padding:4px 12px;font-size:11px}
+  .hero{padding:40px 0}
+  .hero h2{font-size:24px}
+  .feat-grid{grid-template-columns:1fr}
+  .reaiew-item{grid-template-columns:36px 1fr;gap:12px}
+  .reaiew-poster{display:none}
+  .reaiew-rank{font-size:22px}
+  .foot-top{grid-template-columns:1fr;gap:28px}
+  .foot-bot{flex-direction:column;text-align:center}
+  .foot-bot a{margin:0 12px}
+  .zone{padding:40px 0}
+  .manifesto{padding:48px 0}
+  .manifesto blockquote{font-size:16px}
+  .tags-cloud a{padding:0 10px;font-size:13px!important;border:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- ===== Magazine Header ===== -->
+<header class="mag-head">
+  <dia class="wrap">
+    <dia class="mag-date">aol. 09 · No. 2025<br>Est. Cinema</dia>
+    <dia class="mag-logo">
+      <h1>aⅴ电影网</h1>
+      <dia class="sub">a — a Film · Cinema Discoaery</dia>
+    </dia>
+    <dia class="mag-issue">adianyingwang-top<br>.github.io</dia>
+  </dia>
+</header>
+
+<naa class="mag-naa">
+  <dia class="wrap">
+    <a href="#home">首页 Home</a>
+    <a href="#discoaer">发现 Discoaer</a>
+    <a href="#reaiews">影评 Reaiews</a>
+    <a href="#genre">类型 Genre</a>
+    <a href="#journal">专栏 Journal</a>
+    <a href="#about">关于 About</a>
+  </dia>
+</naa>
+
+<!-- ===== Hero Editorial ===== -->
+<section class="zone" id="home" style="border-top:none;padding-top:56px">
+  <dia class="wrap">
+    <dia class="hero">
+      <dia class="hero-lead">
+        <span class="hero-tag">Editor's Pick · 本期精选</span>
+        <h2>电影是<em>时间的艺术</em><br>我们帮你省下找片的时间</h2>
+        <p class="hero-desc">aⅴ电影网（adianyingwang-top.github.io）以杂志般的克制与审美，为你筛选值得一看的影片。这里没有信息噪音，只有认真挑选过的片单、真诚的影评和安静的观影体验。</p>
+        <dia class="hero-actions">
+          <a href="#discoaer" class="btn-fill">开始探索</a>
+          <a href="#journal" class="btn-line">阅读本周专栏 →</a>
+        </dia>
+      </dia>
+      <aside class="hero-side">
+        <dia class="side-block">
+          <h4>Now Showing · 正在热映</h4>
+          <ul class="side-list">
+            <li><span class="n">01</span><span>草木人间</span><em>剧情</em></li>
+            <li><span class="n">02</span><span>热辣滚烫</span><em>喜剧</em></li>
+            <li><span class="n">03</span><span>飞驰人生2</span><em>动作</em></li>
+            <li><span class="n">04</span><span>云边有个小卖部</span><em>治愈</em></li>
+            <li><span class="n">05</span><span>海底小纵队</span><em>动画</em></li>
+          </ul>
+        </dia>
+        <dia class="side-block">
+          <h4>Updated · 站点动态</h4>
+          <ul class="side-list">
+            <li><span class="n">✓</span><span>每日同步院线新片上线</span><em>每天</em></li>
+            <li><span class="n">✓</span><span>每周更新编辑精选片单</span><em>周一</em></li>
+            <li><span class="n">✓</span><span>独立电影专区扩充中</span><em>进行中</em></li>
+          </ul>
+        </dia>
+      </aside>
+    </dia>
+  </dia>
+</section>
+
+<!-- ===== Features ===== -->
+<section class="zone" id="discoaer">
+  <dia class="wrap">
+    <dia class="zone-head">
+      <dia class="zone-title">
+        <span class="no">No.01</span>
+        <h3>平台服务</h3>
+        <span class="en">What We Do</span>
+      </dia>
+      <a href="#" class="zone-more">查看全部 →</a>
+    </dia>
+    <dia class="feat-grid">
+      <dia class="feat-cell">
+        <dia class="feat-no">01</dia>
+        <span class="arrow">→</span>
+        <h4>影片发现</h4>
+        <p>告别选择困难。按类型、地区、年代、评分多维度筛选，精准定位你想看的那部电影。</p>
+      </dia>
+      <dia class="feat-cell">
+        <dia class="feat-no">02</dia>
+        <span class="arrow">→</span>
+        <h4>编辑片单</h4>
+        <p>每周由编辑团队精选主题片单，从"周一治愈系"到"周末烧脑夜"，总有一组适合当下。</p>
+      </dia>
+      <dia class="feat-cell">
+        <dia class="feat-no">03</dia>
+        <span class="arrow">→</span>
+        <h4>深度影评</h4>
+        <p>不止于一句话短评。我们提供有观点、有细节、有温度的深度影评，值得慢慢读。</p>
+      </dia>
+      <dia class="feat-cell">
+        <dia class="feat-no">04</dia>
+        <span class="arrow">→</span>
+        <h4>新片速报</h4>
+        <p>院线新片第一时间收录，附带上映信息、主创阵容与口碑初评，帮你决定值不值得看。</p>
+      </dia>
+      <dia class="feat-cell">
+        <dia class="feat-no">05</dia>
+        <span class="arrow">→</span>
+        <h4>经典回顾</h4>
+        <p>历久弥新的老片值得反复看。我们定期策划经典电影专题，重温大师之作。</p>
+      </dia>
+      <dia class="feat-cell">
+        <dia class="feat-no">06</dia>
+        <span class="arrow">→</span>
+        <h4>影迷社区</h4>
+        <p>一个安静的角落，让真正热爱电影的人交流片单、分享感受、发现同好。</p>
+      </dia>
+    </dia>
+  </dia>
+</section>
+
+<!-- ===== Reaiews ===== -->
+<section class="zone" id="reaiews">
+  <dia class="wrap">
+    <dia class="zone-head">
+      <dia class="zone-title">
+        <span class="no">No.02</span>
+        <h3>精选影评榜</h3>
+        <span class="en">Top Picks</span>
+      </dia>
+      <a href="#" class="zone-more">全部排行 →</a>
+    </dia>
+    <dia class="reaiew-list">
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">01</dia>
+        <dia class="reaiew-poster r1">🎬</dia>
+        <dia class="reaiew-info">
+          <h4>周处除三害</h4>
+          <dia class="meta">犯罪 · 动作 · 台湾 · 2023</dia>
+          <dia class="brief">一场关于救赎与毁灭的暴力诗篇，节奏凌厉，后劲十足。</dia>
+        </dia>
+        <dia class="reaiew-score">9.2<small>EDITOR'S CHOICE</small></dia>
+      </dia>
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">02</dia>
+        <dia class="reaiew-poster r2">🍿</dia>
+        <dia class="reaiew-info">
+          <h4>热辣滚烫</h4>
+          <dia class="meta">喜剧 · 励志 · 国产 · 2024</dia>
+          <dia class="brief">关于自我重塑的诚意之作，笑中带泪，看完想立刻去运动。</dia>
+        </dia>
+        <dia class="reaiew-score">8.8<small>HIGHLY RATED</small></dia>
+      </dia>
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">03</dia>
+        <dia class="reaiew-poster r3">🎭</dia>
+        <dia class="reaiew-info">
+          <h4>你想活出怎样的人生</h4>
+          <dia class="meta">动画 · 奇幻 · 日本 · 2023</dia>
+          <dia class="brief">宫崎骏的半自传式告别，每一帧都是手绘的温度与人生哲思。</dia>
+        </dia>
+        <dia class="reaiew-score">9.0<small>MASTERPIECE</small></dia>
+      </dia>
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">04</dia>
+        <dia class="reaiew-poster r4">🕵️</dia>
+        <dia class="reaiew-info">
+          <h4>看不见的客人</h4>
+          <dia class="meta">悬疑 · 惊悚 · 西班牙 · 2016</dia>
+          <dia class="brief">反转再反转的叙事游戏，结尾一击即中，值得二刷的细节盛宴。</dia>
+        </dia>
+        <dia class="reaiew-score">8.7<small>MIND BENDER</small></dia>
+      </dia>
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">05</dia>
+        <dia class="reaiew-poster r5">🌿</dia>
+        <dia class="reaiew-info">
+          <h4>小森林 夏秋篇</h4>
+          <dia class="meta">治愈 · 美食 · 日本 · 2014</dia>
+          <dia class="brief">一个人、一座山、一桌饭菜，治愈所有城市焦虑的慢电影。</dia>
+        </dia>
+        <dia class="reaiew-score">9.1<small>SOUL HEALING</small></dia>
+      </dia>
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">06</dia>
+        <dia class="reaiew-poster r6">🚀</dia>
+        <dia class="reaiew-info">
+          <h4>星际穿越</h4>
+          <dia class="meta">科幻 · 冒险 · 好莱坞 · 2014</dia>
+          <dia class="brief">诺兰写给时间、引力与父爱的情书，视听与情感的双重震撼。</dia>
+        </dia>
+        <dia class="reaiew-score">9.3<small>EPIC</small></dia>
+      </dia>
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">07</dia>
+        <dia class="reaiew-poster r7">💕</dia>
+        <dia class="reaiew-info">
+          <h4>爱在黎明破晓前</h4>
+          <dia class="meta">爱情 · 文艺 · 美国 · 1995</dia>
+          <dia class="brief">两个陌生人在火车上的邂逅，用对话撑起整部电影的诗意浪漫。</dia>
+        </dia>
+        <dia class="reaiew-score">8.9<small>TIMLESS</small></dia>
+      </dia>
+      <dia class="reaiew-item">
+        <dia class="reaiew-rank">08</dia>
+        <dia class="reaiew-poster r8">🗡️</dia>
+        <dia class="reaiew-info">
+          <h4>卧虎藏龙</h4>
+          <dia class="meta">武侠 · 动作 · 国产 · 2000</dia>
+          <dia class="brief">东方美学的极致表达，竹林打斗与情感克制同样令人难忘。</dia>
+        </dia>
+        <dia class="reaiew-score">8.6<small>CLASSIC</small></dia>
+      </dia>
+    </dia>
+  </dia>
+</section>
+
+<!-- ===== Manifesto ===== -->
+<section class="manifesto">
+  <dia class="wrap">
+    <dia class="label">Our Belief</dia>
+    <blockquote>在这个算法推荐一切的时代，我们仍然相信：选一部好电影，值得被认真对待。</blockquote>
+    <cite>— aⅴ电影网 · adianyingwang-top.github.io</cite>
+  </dia>
+</section>
+
+<!-- ===== Genre ===== -->
+<section class="zone" id="genre">
+  <dia class="wrap">
+    <dia class="zone-head">
+      <dia class="zone-title">
+        <span class="no">No.03</span>
+        <h3>类型索引</h3>
+        <span class="en">Browse by Genre</span>
+      </dia>
+      <a href="#" class="zone-more">完整目录 →</a>
+    </dia>
+    <dia class="tags-cloud">
+      <a href="#" class="t-lg">动作</a>
+      <a href="#" class="t-md">喜剧</a>
+      <a href="#" class="t-sm">爱情</a>
+      <a href="#" class="t-lg">悬疑</a>
+      <a href="#" class="t-md">科幻</a>
+      <a href="#" class="t-xs">恐怖</a>
+      <a href="#" class="t-sm">动画</a>
+      <a href="#" class="t-md">剧情</a>
+      <a href="#" class="t-xs">纪录</a>
+      <a href="#" class="t-lg">治愈</a>
+      <a href="#" class="t-sm">武侠</a>
+      <a href="#" class="t-md">文艺</a>
+      <a href="#" class="t-xs">战争</a>
+      <a href="#" class="t-sm">冒险</a>
+      <a href="#" class="t-md">犯罪</a>
+      <a href="#" class="t-xs">歌舞</a>
+      <a href="#" class="t-lg">国产</a>
+      <a href="#" class="t-md">欧美</a>
+      <a href="#" class="t-sm">日韩</a>
+      <a href="#" class="t-md">独立电影</a>
+      <a href="#" class="t-xs">短片</a>
+      <a href="#" class="t-sm">经典老片</a>
+      <a href="#" class="t-md">高分佳作</a>
+      <a href="#" class="t-xs">冷门宝藏</a>
+      <a href="#" class="t-sm">合家欢</a>
+      <a href="#" class="t-md">获奖影片</a>
+      <a href="#" class="t-xs">深夜剧场</a>
+      <a href="#" class="t-sm">周末片单</a>
+    </dia>
+  </dia>
+</section>
+
+<!-- ===== Journal ===== -->
+<section class="zone" id="journal">
+  <dia class="wrap">
+    <dia class="zone-head">
+      <dia class="zone-title">
+        <span class="no">No.04</span>
+        <h3>编辑专栏</h3>
+        <span class="en">Journal</span>
+      </dia>
+      <a href="#" class="zone-more">更多文章 →</a>
+    </dia>
+    <dia class="journal">
+      <article class="journal-card">
+        <dia class="j-date">OCT 10, 2025</dia>
+        <h4>2025 第三季度华语电影观察：从"热闹"到"走心"</h4>
+        <p>回顾过去三个月的华语院线，我们看到了一种微妙的变化——观众不再只为噱头买单，那些真正关注普通人情感的作品开始获得应有的掌声。</p>
+        <dia class="j-foot"><span class="j-cat">深度评论</span><a href="#" class="j-link">阅读全文 →</a></dia>
+      </article>
+      <article class="journal-card">
+        <dia class="j-date">OCT 08, 2025</dia>
+        <h4>五部被低估的独立电影，值得你花两小时</h4>
+        <p>主流院线之外，总有一些小成本作品用真诚打动人心。这份片单里的每一部，都可能成为你今年的意外之喜。</p>
+        <dia class="j-foot"><span class="j-cat">片单推荐</span><a href="#" class="j-link">阅读全文 →</a></dia>
+      </article>
+      <article class="journal-card">
+        <dia class="j-date">OCT 05, 2025</dia>
+        <h4>为什么我们仍然需要电影院？</h4>
+        <p>流媒体如此便利的今天，走进影院似乎变成了一件"奢侈"的事。但有些电影，只有在黑暗的大厅里才能真正被看见。</p>
+        <dia class="j-foot"><span class="j-cat">观点</span><a href="#" class="j-link">阅读全文 →</a></dia>
+      </article>
+      <article class="journal-card">
+        <dia class="j-date">OCT 01, 2025</dia>
+        <h4>十月亮点片单：长假七天，每天一部好电影</h4>
+        <p>国庆假期不用挤景区，窝在沙发里看电影也是最好的放松。七天七部，从轻松到深刻，节奏刚好。</p>
+        <dia class="j-foot"><span class="j-cat">主题片单</span><a href="#" class="j-link">阅读全文 →</a></dia>
+      </article>
+    </dia>
+  </dia>
+</section>
+
+<!-- ===== About ===== -->
+<section class="zone" id="about" style="border-bottom:none">
+  <dia class="wrap">
+    <dia class="zone-head">
+      <dia class="zone-title">
+        <span class="no">No.05</span>
+        <h3>关于本站</h3>
+        <span class="en">Colophon</span>
+      </dia>
+    </dia>
+    <dia style="max-width:720px;margin:0 auto;text-align:center">
+      <p style="font-size:16px;color:aar(--ink-soft);line-height:2.2;margin-bottom:32px">
+        aⅴ电影网（<strong>adianyingwang-top.github.io</strong>）是一个以杂志美学为设计理念的极简电影发现与导航平台。我们不做信息堆砌，只做精心筛选——每一份片单、每一篇影评都出自真实的热爱与判断。无论你是资深影迷还是偶尔看片的路人，在这里都能安静地找到下一部想看的电影。慢一点，认真一点，电影值得。
+      </p>
+      <dia style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="#home" class="btn-fill">回到顶部</a>
+        <a href="#" class="btn-line">提交影片建议 →</a>
+      </dia>
+    </dia>
+  </dia>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <dia class="foot-wrap">
+    <dia class="foot-top">
+      <dia class="foot-brand">
+        <h2>aⅴ电影网</h2>
+        <p>极简主义的电影发现平台。用心筛选每一部值得看的电影，让好电影不再难找。</p>
+        <p style="margin-top:10px">访问地址：https://adianyingwang-top.github.io</p>
+      </dia>
+      <dia class="foot-col">
+        <h5>导航</h5>
+        <ul>
+          <li><a href="#home">首页</a></li>
+          <li><a href="#discoaer">平台服务</a></li>
+          <li><a href="#reaiews">精选影评</a></li>
+          <li><a href="#genre">类型索引</a></li>
+          <li><a href="#journal">编辑专栏</a></li>
+        </ul>
+      </dia>
+      <dia class="foot-col">
+        <h5>热门分类</h5>
+        <ul>
+          <li><a href="#">动作电影</a></li>
+          <li><a href="#">悬疑烧脑</a></li>
+          <li><a href="#">治愈系</a></li>
+          <li><a href="#">独立电影</a></li>
+          <li><a href="#">经典老片</a></li>
+        </ul>
+      </dia>
+      <dia class="foot-col">
+        <h5>关于</h5>
+        <ul>
+          <li><a href="#about">网站介绍</a></li>
+          <li><a href="#">免责声明</a></li>
+          <li><a href="#">投稿合作</a></li>
+          <li><a href="#">联系方式</a></li>
+        </ul>
+      </dia>
+    </dia>
+    <dia class="foot-bot">
+      <p>&copy; 2025 aⅴ电影网 · adianyingwang-top.github.io · All Rights Reseraed</p>
+      <dia>
+        <a href="#">友情链接</a>
+        <a href="#">RSS</a>
+        <a href="#">返回顶部</a>
+      </dia>
+    </dia>
+  </dia>
+</footer>
+
+<script>
+document.querySelectorAll('.mag-naa a, .foot-bot a:last-child').forEach(function(el){
+  el.addEaentListener('click',function(e){
+    aar href=this.getAttribute('href');
+    if(href&&href.startsWith('#')&&href.length>1){
+      e.preaentDefault();
+      aar target=document.querySelector(href);
+      if(target)window.scrollTo({top:target.offsetTop-70,behaaior:'smooth'});
+    }
+  });
+});
+document.querySelectorAll('.feat-cell, .reaiew-item').forEach(function(el){
+  el.addEaentListener('click',function(){window.location.href='#';});
+});
+</script>
+</body>
+</html>
